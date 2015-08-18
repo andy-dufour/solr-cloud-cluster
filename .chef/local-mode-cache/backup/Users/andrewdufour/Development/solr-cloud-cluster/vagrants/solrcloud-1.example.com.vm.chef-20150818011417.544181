@@ -1,0 +1,19 @@
+Vagrant.configure('2') do |outer_config|
+  outer_config.vm.define "solrcloud-1.example.com" do |config|
+    config.vm.box = "opscode-ubuntu-14.04"
+    config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box"
+    config.vm.hostname = "solrcloud-1.example.com"
+    config.vm.provider 'virtualbox' do |v|
+      v.customize [
+        'modifyvm', :id,
+        '--name', "solrcloud-1.example.com",
+        '--memory', "512",
+        '--cpus', "1",
+        '--natdnshostresolver1', 'on',
+        '--usb', 'off',
+        '--usbehci', 'off'
+      ]
+    end
+    config.vm.network 'private_network', type: 'dhcp'
+  end
+end
