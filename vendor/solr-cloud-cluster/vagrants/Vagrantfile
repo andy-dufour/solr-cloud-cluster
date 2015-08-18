@@ -1,3 +1,0 @@
-Dir.glob('/Users/andrewdufour/Development/solr-cloud-cluster/vagrants/*.vm') do |vm_file|
-  eval(IO.read(vm_file), nil, vm_file)
-end
