@@ -11,7 +11,8 @@
     "java": ">= 0.0.0",
     "chef-provisioning-vagrant-helper": ">= 0.0.0",
     "zookeeper": ">= 0.0.0",
-    "hostsfile": ">= 0.0.0"
+    "hostsfile": ">= 0.0.0",
+    "solr": ">= 0.0.0"
   },
   "recommendations": {
   },

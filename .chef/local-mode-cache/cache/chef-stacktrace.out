@@ -1,4 +1,4 @@
-Generated at 2015-08-18 23:57:42 -0400
+Generated at 2015-08-26 01:05:26 -0400
 RuntimeError: machine_batch[solr-servers] (solr-cloud-cluster::provision_vagrant line 11) had an error: RuntimeError: Error: command 'chef-client -l auto' exited with code 1.
 
 /Users/andrewdufour/.chefdk/gem/ruby/2.1.0/gems/chef-provisioning-1.2.0/lib/chef/provisioning/transport/ssh.rb:264:in `error!'
@@ -17,7 +17,7 @@ RuntimeError: machine_batch[solr-servers] (solr-cloud-cluster::provision_vagrant
 /Users/andrewdufour/.chefdk/gem/ruby/2.1.0/gems/chef-provisioning-1.2.0/lib/chef/provisioning/chef_provider_action_handler.rb:59:in `open_stream'
 /Users/andrewdufour/.chefdk/gem/ruby/2.1.0/gems/chef-provisioning-1.2.0/lib/chef/provisioning/convergence_strategy/install_cached.rb:78:in `converge'
 /Users/andrewdufour/.chefdk/gem/ruby/2.1.0/gems/chef-provisioning-1.2.0/lib/chef/provisioning/machine/basic_machine.rb:21:in `converge'
-/Users/andrewdufour/.chefdk/gem/ruby/2.1.0/gems/chef-provisioning-1.2.0/lib/chef/provider/machine_batch.rb:60:in `block (2 levels) in <class:MachineBatch>'
+/Users/andrewdufour/.chefdk/gem/ruby/2.1.0/gems/chef-provisioning-1.2.0/lib/chef/provider/machine_batch.rb:63:in `block (2 levels) in <class:MachineBatch>'
 /Users/andrewdufour/.chefdk/gem/ruby/2.1.0/gems/chef-provisioning-1.2.0/lib/chef/provider/machine_batch.rb:102:in `block (2 levels) in with_ready_machines'
 /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/chef-provisioning-vagrant-0.8.3/lib/chef/provisioning/vagrant_driver/driver.rb:128:in `block in ready_machines'
 /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/chef-provisioning-vagrant-0.8.3/lib/chef/provisioning/vagrant_driver/driver.rb:125:in `each_pair'

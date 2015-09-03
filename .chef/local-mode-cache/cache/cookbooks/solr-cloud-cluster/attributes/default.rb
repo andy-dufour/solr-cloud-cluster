@@ -2,6 +2,20 @@
 default['chef-provisioning-vagrant']['chef_repo'] = "/Users/andrewdufour/Development/solr-cloud-cluster"
 default['chef-provisioning-vagrant']['vagrants_dir'] = "/Users/andrewdufour/Development/solr-cloud-cluster/vagrants"
 default['chef-provisioning-vagrant']['vendor_cookbooks_path'] = "/Users/andrewdufour/Development/solr-cloud-cluster/vendor"
+default['chef-provisioning-vagrant']['use_local_chef_server'] = true
+
+default['solr-cloud-cluster']['version']  = '4.10.4'
+default['solr-cloud-cluster']['url']      = "https://archive.apache.org/dist/lucene/solr/#{node['solr-cloud-cluster']['version']}/#{node['solr-cloud-cluster']['version'].split('.')[0].to_i < 4 ? 'apache-' : ''}solr-#{node['solr-cloud-cluster']['version']}.tgz"
+default['solr-cloud-cluster']['data_dir'] = '/etc/solr'
+default['solr-cloud-cluster']['dir']      = '/opt/solr'
+default['solr-cloud-cluster']['port']     = 8080
+default['solr-cloud-cluster']['pid_file'] = '/var/run/solr.pid'
+default['solr-cloud-cluster']['log_file'] = '/var/log/solr.log'
+default['solr-cloud-cluster']['user']     = 'root'
+default['solr-cloud-cluster']['group']    = 'root'
+default['solr-cloud-cluster']['install_java'] = true
+default['solr-cloud-cluster']['java_options'] = '-Xms128M -Xmx512M'
+
 
 default['zookeeper']['service_style'] = 'upstart'
 default['java']['jdk_version'] = '7'
@@ -14,8 +28,8 @@ default['chef-provisioning-vagrant']['vbox']['ram'] = 512
 default['chef-provisioning-vagrant']['vbox']['cpus'] = 1
 default['chef-provisioning-vagrant']['vbox']['private_networks']['default'] = 'dhcp'
 
-solr_cluster_nodes_count = 2
-default['solr-cloud-cluster']['cluster_nodes'] = 1.upto(solr_cluster_nodes_count).map { |i| "solrcloud-#{i}.example.com" }
+default['solr-cloud-cluster']['solr_cluster_nodes_count'] = 3
+default['solr-cloud-cluster']['cluster_nodes'] = 1.upto(node['solr-cloud-cluster']['solr_cluster_nodes_count']).map { |i| "solrcloud-#{i}.example.com" }
 
 
 zk_cluster_nodes_count = 1
